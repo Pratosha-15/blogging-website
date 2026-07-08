@@ -12,11 +12,15 @@
 <header>
 <nav>
 <h1>BlogSphere</h1>
+
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a href="dashboard.html">Dashboard</a></li>
 <li><a href="profile.html">Author</a></li>
 </ul>
+
+<button id="theme-btn">🌙</button>
+
 </nav>
 </header>
 
@@ -29,16 +33,18 @@
 
 <div class="card">
 
+<h3>Introduction</h3>
+
 <p>
-Web development is the process of building websites and web applications.
-It includes HTML for structure, CSS for styling, and JavaScript for adding
-interactivity. Modern developers also use frameworks such as React,
-Node.js, and databases like MongoDB to create full-stack applications.
+Web development is the process of creating websites and web applications.
+It uses HTML for structure, CSS for design, and JavaScript for interactivity.
+Modern developers also use technologies like React, Node.js, Express, and
+MongoDB to build fast and scalable applications.
 </p>
 
 <br>
 
-<button>❤️ Like</button>
+<button onclick="likePost(this)">❤️ 0</button>
 <button>🔖 Bookmark</button>
 <button>📤 Share</button>
 
@@ -47,19 +53,22 @@ Node.js, and databases like MongoDB to create full-stack applications.
 <br>
 
 <div class="card">
+
 <h3>Comments</h3>
 
-<textarea placeholder="Write a comment..."
-style="width:100%;height:100px;padding:10px;"></textarea>
+<input
+type="text"
+id="commentInput"
+placeholder="Write a comment..."
+style="width:100%;padding:12px;border-radius:8px;border:1px solid #ccc;">
 
 <br><br>
 
-<button>Post Comment</button>
+<button onclick="addComment()">Post Comment</button>
 
 <hr>
 
-<p><strong>Alex:</strong> Great article! Very helpful.</p>
-<p><strong>Priya:</strong> Thanks for sharing this blog.</p>
+<div id="commentList"></div>
 
 </div>
 
